@@ -3,31 +3,28 @@
   width: 100%
   margin: 0 auto 3rem auto
 
-  h1, .h1
-    letter-spacing: 0.01em
-    font-size: 1.5rem
-    line-height: 2rem
-    font-style: normal
-    font-weight: 700
-    color: $color-text
-    margin-top: 0
-    margin-bottom: 0
-    antialias()
+  #logo-title-container
+    display: block
+    text-align: center // 使 logo 和标题居中
 
-  a
-    color: inherit
-    text-decoration: none
-    background: none
+  #title {
+    font-size: 2.5em;
+  }
 
   #logo
     display: inline-block
-    float: left
-    margin-right: 20px
+    float: none // 取消浮动，使其单独一行
+    margin: 0 auto 10px auto // 调整 margin 使其居中并与标题有间距
     width: logo-width
     height: logo-height
     background-repeat: no-repeat
     background-size: logo-width logo-height
     border-radius: 5px
+
+  #title // 新增，确保标题在 logo下方，并居中
+    display: block
+    text-align: center
+    clear: both // 清除浮动，确保在 logo下方
 
   #nav
     letter-spacing: 0.01em
@@ -35,21 +32,33 @@
     font-style: normal
     font-weight: 200
     color: $color-accent
+    text-align: center // 导航栏内容居中
+    margin-top: 20px // 增加与 logo/标题的间距
     ul
       list-style-type: none
       margin: 0
       padding: 0
       line-height: 15px
+      display: inline-block // 使 ul 元素居中
+      padding: 10px 0 // 增加上下内边距
+      border-top: 1px solid $color-accent // 顶部边框
+      border-bottom: 1px solid $color-accent // 底部边框
       a
         margin-right: 15px
         color: color-accent
-      a:hover
-          underline(5px, $color-accent)
+        font-size: 1rem // 增大字体
+        font-weight: 400 // 调整字重
+        padding: 5px 10px // 增加内边距，提升点击区域
+        border-radius: 5px // 圆角效果
+        &:hover
+          background-color: $color-accent // 鼠标悬停背景色
+          color: white // 鼠标悬停文字颜色
+          text-decoration: none // 移除悬停时的下划线
       li
         display: inline-block
         vertical-align: middle
-        margin-right: 15px
-        border-right: 1px dotted $color-accent
+        margin-right: 20px // 增加导航项之间的间距
+        border-right: none // 移除右边框
       .icon
         display: none
       li:last-child
