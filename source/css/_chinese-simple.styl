@@ -27,22 +27,23 @@ li
 // 中文引用优化
 blockquote
   font-style: normal
-  border-left: 4px solid #2bbc8a
+  border-left: 4px solid #059669
   padding-left: 1rem
   margin-left: 0
-  color: #8c8c8c
-  background: rgba(43, 188, 138, 0.05)
+  color: #4b5563 // 更深的引用文字颜色
+  background: rgba(5, 150, 105, 0.03) // 更浅的背景色
   border-radius: 0 4px 4px 0
 
 // 中文强调文本优化
 strong, b
   font-weight: 600
-  color: #2a2a2a
+  color: #111827 // 更深的强调色
 
 em, i
   font-style: normal
-  background: linear-gradient(transparent 60%, rgba(43, 188, 138, 0.3) 60%)
+  background: linear-gradient(transparent 60%, rgba(37, 99, 235, 0.15) 60%) // 蓝色高亮背景
   padding: 0 2px
+  color: #1e40af // 蓝色强调文字
 
 // 中文代码优化
 code
@@ -67,7 +68,7 @@ pre code
     display: inline-block
     margin-right: 1rem
     font-size: 0.85rem
-    color: #999999
+    color: #6b7280 // 使用新的辅助文字颜色
 
 // 中文搜索优化
 input[type="search"], input[type="text"]
@@ -79,3 +80,64 @@ table
   border-collapse: collapse
   margin: 1rem 0
   font-size: 0.9em
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1)
+  border-radius: 6px
+  overflow: hidden
+  
+  th
+    background: #f8fafc
+    color: #374151
+    font-weight: 600
+    padding: 12px 15px
+    text-align: left
+    border-bottom: 2px solid #e5e7eb
+    
+  td
+    padding: 12px 15px
+    border-bottom: 1px solid #f3f4f6
+    color: #4b5563
+    
+  tr:nth-child(even)
+    background: #f9fafb
+    
+  tr:hover
+    background: #f3f4f6
+
+// 文本选择优化
+::selection
+  background: rgba(37, 99, 235, 0.2)
+  color: #1e40af
+
+::-moz-selection
+  background: rgba(37, 99, 235, 0.2)
+  color: #1e40af
+
+// 焦点状态优化
+a:focus,
+button:focus,
+input:focus,
+textarea:focus
+  outline: 2px solid #3b82f6
+  outline-offset: 2px
+  border-radius: 2px
+
+// 可访问性优化
+@media (prefers-reduced-motion: reduce)
+  *
+    animation-duration: 0.01ms !important
+    animation-iteration-count: 1 !important
+    transition-duration: 0.01ms !important
+
+// 打印样式优化
+@media print
+  body
+    color: #000000 !important
+    background: #ffffff !important
+    
+  a
+    color: #000000 !important
+    text-decoration: underline !important
+    
+  blockquote
+    border-left: 4px solid #000000 !important
+    background: none !important

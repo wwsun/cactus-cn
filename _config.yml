@@ -51,7 +51,7 @@ customize:
         # linkedin: https://www.linkedin.com/in/natalyakosenko/
     show_all_posts: false
     post_count: 10
-    highlight: pojoaque
+    highlight: light-modern
 
 # RSS
 rss: false

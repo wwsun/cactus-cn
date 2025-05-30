@@ -1,0 +1,176 @@
+// Markdown 内容样式优化 - 简化版
+// Markdown content styling optimization - simplified
+
+.content
+  line-height: 1.8
+  
+  // 段落优化
+  p
+    margin: 1.2em 0
+    text-align: justify
+    word-wrap: break-word
+    
+    &:first-child
+      margin-top: 0
+    
+    &:last-child
+      margin-bottom: 0
+
+  // 标题优化
+  h1
+    font-size: 2em
+    font-weight: 700
+    color: #111827
+    margin: 2.5rem 0 1.5rem 0
+    padding-bottom: 0.5rem
+    border-bottom: 3px solid $color-accent
+    
+    &:first-child
+      margin-top: 1rem
+
+  h2
+    font-size: 1.6em
+    font-weight: 600
+    color: #1f2937
+    margin: 2rem 0 1rem 0
+    padding-left: 1rem
+    position: relative
+    
+    &:before
+      content: "#"
+      color: $color-accent
+      position: absolute
+      left: 0
+      top: 0
+      font-size: 1.2em
+      font-weight: bold
+
+  h3
+    font-size: 1.3em
+    font-weight: 600
+    color: #374151
+    margin: 1.8rem 0 0.8rem 0
+    
+  h4
+    font-size: 1.1em
+    font-weight: 600
+    color: #4b5563
+    margin: 1.5rem 0 0.8rem 0
+    border-bottom: 2px solid #e5e7eb
+    padding-bottom: 0.3rem
+    
+  h5, h6
+    font-size: 1em
+    font-weight: 600
+    color: #6b7280
+    margin: 1.2rem 0 0.6rem 0
+
+  // 列表优化
+  ul, ol
+    margin: 1.2rem 0
+    padding-left: 2rem
+    
+    li
+      margin: 0.5rem 0
+      line-height: 1.8
+
+  // 引用块优化
+  blockquote
+    margin: 1.5rem 0
+    padding: 1rem 1.5rem
+    background: rgba(5, 150, 105, 0.05)
+    border-left: 4px solid $color-accent
+    border-radius: 0 8px 8px 0
+    
+    p
+      margin: 0.5rem 0
+      color: #4b5563
+      font-style: italic
+      
+      &:first-child
+        margin-top: 0
+        
+      &:last-child
+        margin-bottom: 0
+
+  // 代码优化
+  pre
+    margin: 1.5rem 0
+    padding: 1.5rem
+    background: #f8fafc
+    border: 1px solid #e2e8f0
+    border-radius: 8px
+    overflow-x: auto
+      
+    code
+      background: none
+      color: inherit
+      padding: 0
+
+  code
+    background: #f1f5f9
+    color: #e11d48
+    padding: 0.15rem 0.4rem
+    border-radius: 4px
+    font-size: 0.9em
+    font-weight: 500
+    border: 1px solid #e2e8f0
+
+  // 表格优化
+  table
+    width: 100%
+    margin: 1.5rem 0
+    border-collapse: collapse
+    border-radius: 8px
+    overflow: hidden
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+    
+    th
+      padding: 1rem
+      background: #f8fafc
+      font-weight: 600
+      color: #374151
+      border-bottom: 2px solid #e5e7eb
+      text-align: left
+        
+    td
+      padding: 1rem
+      color: #4b5563
+      border-bottom: 1px solid #f3f4f6
+
+  // 图片优化
+  img
+    max-width: 100%
+    height: auto
+    border-radius: 8px
+    margin: 1.5rem auto
+    display: block
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+
+  // 强调文本
+  strong
+    font-weight: 600
+    color: #111827
+    
+  em
+    color: #1e40af
+    font-style: italic
+
+  // 分割线
+  hr
+    margin: 2rem 0
+    border: none
+    height: 1px
+    background: #e5e7eb
+
+// 响应式优化
+@media screen and (max-width: 768px)
+  .content
+    h1
+      font-size: 1.6em
+      
+    h2
+      font-size: 1.4em
+      
+    h3
+      font-size: 1.2em

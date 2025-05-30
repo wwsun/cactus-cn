@@ -12,7 +12,7 @@ global-reset()
 
 html
   height: 100%
-  border-top: 2px solid $color-text
+  border-top: 2px solid $color-accent
   -webkit-text-size-adjust: 100%
   -ms-text-size-adjust: 100%
 
@@ -48,10 +48,14 @@ body
 
   a
     text-decoration: none
-    color: $color-text
-    underline(5px, $color-text)
+    color: $color-link
+    border-bottom: 1px solid transparent
+    transition: all 0.2s ease
+    position: relative
     &:hover
-      background-image: linear-gradient(transparent, transparent 4px, $color-link 4px, $color-link)
+      color: #1d4ed8
+      border-bottom-color: $color-link
+      background: linear-gradient(transparent, transparent 85%, rgba(37, 99, 235, 0.12) 85%, rgba(37, 99, 235, 0.12))
 
   a.icon
     background: none
@@ -116,6 +120,7 @@ body
 @import "_partial/footer"
 @import "_partial/pagination"
 @import "_partial/search"
+@import "_partial/markdown-simple"
 
 // Code
 @import "_highlight/" + highlight
@@ -127,12 +132,14 @@ pre
   line-height: 22px
   -webkit-border-radius: 4px
   border-radius: 4px
-  border: 1px dotted #666
+  border: 1px solid #e5e7eb // 更浅的边框色
+  background: #f9fafb // 轻微的背景色
   overflow-x: auto
 code
   -webkit-border-radius: 2px
   border-radius: 2px
-  background: #eee
+  background: #f3f4f6 // 更现代的浅灰色背景
+  color: #dc2626 // 红色代码文字，提升识别度
   padding: 0 5px
 pre code
   border: none
