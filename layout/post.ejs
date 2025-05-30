@@ -6,6 +6,10 @@
         <span itemprop="name"><% if (page.author) { %><%- page.author %><% } else { %><%- config.title %><% } %></span>
       </span>
       <%- partial('_partial/post/date', { post: page, class_name: 'postdate' }) %>
+      <% if (theme.chinese && theme.chinese.enable) { %>
+        <span class="reading-time">阅读时间：<%- chinese_reading_time(page.content) %></span>
+        <span class="word-count">字数：<%- chinese_word_count(page.content) %></span>
+      <% } %>
       <%- partial('_partial/post/tag') %>
     </div>
   </header>

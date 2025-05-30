@@ -1,0 +1,36 @@
+menu:
+  home: 首页
+  archives: 归档
+  categories: 分类
+  tags: 标签
+  about: 关于
+  search: 搜索
+  
+post:
+  posted: 发表于
+  in: 归档于
+  read_more: 阅读全文
+  untitled: 无标题
+  sticky: 置顶
+  toc_empty: 此文章未包含目录
+  
+archive:
+  title:
+    year: '%d年'
+    month: '%Y年%m月'
+  no_posts: 暂无文章
+
+pagination:
+  prev: 上一页
+  next: 下一页
+
+search:
+  placeholder: 搜索文章...
+  no_result: 没有找到相关结果
+  
+sidebar:
+  overview: 概况
+  toc: 目录
+
+comment:
+  comments: 评论

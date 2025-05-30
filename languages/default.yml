@@ -1,0 +1,36 @@
+menu:
+  home: Home
+  archives: Archives
+  categories: Categories
+  tags: Tags
+  about: About
+  search: Search
+  
+post:
+  posted: Posted on
+  in: In
+  read_more: Read More
+  untitled: Untitled
+  sticky: Sticky
+  toc_empty: This post does not have a table of contents
+  
+archive:
+  title:
+    year: '%d'
+    month: '%b %Y'
+  no_posts: No posts
+
+pagination:
+  prev: Prev
+  next: Next
+
+search:
+  placeholder: Search...
+  no_result: No result found
+  
+sidebar:
+  overview: Overview
+  toc: Contents
+
+comment:
+  comments: Comments

@@ -1,0 +1,210 @@
+// 中文优化样式
+// Chinese typography optimization
+
+// 基础字体渲染优化
+body
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-rendering: optimizeLegibility
+
+// 中文段落优化
+p
+  text-align: justify
+  word-wrap: break-word
+  word-break: break-all
+  hyphens: none
+  
+  // 中文标点符号优化
+  &:lang(zh)
+    word-break: break-word
+    line-break: strict
+    text-justify: inter-ideograph
+
+// 标题中文优化
+h1, h2, h3, h4, h5, h6
+  font-weight: 600
+  letter-spacing: 0.02em
+  
+  // 中文标题行高优化
+  &:lang(zh)
+    line-height: 1.4
+
+// 中文列表优化
+li
+  line-height: 1.8
+  word-break: break-word
+
+// 中文引用优化
+blockquote
+  font-style: normal
+  border-left: 4px solid #2bbc8a
+  padding-left: 1rem
+  margin-left: 0
+  color: #8c8c8c
+  background: rgba(43, 188, 138, 0.05)
+  border-radius: 0 4px 4px 0
+  
+  p
+    margin: 0.5rem 0
+    
+  &:before
+    content: ""
+    
+  &:after
+    content: ""
+
+// 中文强调文本优化
+strong, b
+  font-weight: 600
+  color: #2a2a2a
+
+em, i
+  font-style: normal
+  background: linear-gradient(transparent 60%, rgba(43, 188, 138, 0.3) 60%)
+  padding: 0 2px
+
+// 中文代码优化
+code
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro", "Menlo", "Meslo LG", "Consolas", monospace
+  font-size: 0.9em
+  word-break: break-all
+  
+pre code
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro", "Menlo", "Meslo LG", "Consolas", monospace
+  word-break: normal
+
+// 中文链接优化
+a
+  text-decoration: none
+  border-bottom: 1px solid transparent
+  transition: border-bottom-color 0.2s ease
+  
+  &:hover
+    border-bottom-color: currentColor
+
+// 移动端中文优化
+@media screen and (max-width: 768px)
+  body
+    font-size: 16px
+    line-height: 1.8
+  
+  h1, h2, h3, h4, h5, h6
+    line-height: 1.4
+    
+  p
+    text-align: left
+
+// 中文日期和元信息优化
+.meta
+  font-size: 0.9em
+  color: #8c8c8c
+  
+  *
+    color: #8c8c8c
+
+  .reading-time, .word-count
+    display: inline-block
+    margin-right: 1rem
+    font-size: 0.85rem
+    color: #999999
+    
+    &:before
+      content: "·"
+      margin-right: 0.5rem
+      color: #cccccc
+
+// 中文搜索优化
+input[type="search"], input[type="text"]
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", "Menlo", "Meslo LG", monospace, sans-serif
+
+// 中文标签优化
+.tag, .category
+  display: inline-block
+  padding: 0.2em 0.6em
+  margin: 0.2em
+  background: #f5f5f5
+  border-radius: 3px
+  font-size: 0.9em
+  text-decoration: none
+  
+  &:hover
+    background: #e8f5e8
+
+// 中文目录优化
+.toc
+  background: #fafafa
+  border: 1px solid #e5e5e5
+  border-radius: 5px
+  padding: 1rem
+  margin: 1rem 0
+  
+  ol
+    margin: 0
+    padding-left: 1.5rem
+    
+  li
+    margin: 0.3rem 0
+    line-height: 1.6
+
+// 中文分页优化
+.pagination
+  text-align: center
+  margin: 2rem 0
+  
+  a
+    padding: 0.5rem 1rem
+    margin: 0 0.2rem
+    border: 1px solid #ddd
+    border-radius: 3px
+    text-decoration: none
+    
+    &:hover
+      background: #f0f8f0
+      border-color: #2bbc8a
+
+// 中文表格优化
+table
+  width: 100%
+  border-collapse: collapse
+  margin: 1rem 0
+  font-size: 0.9em
+  
+  th, td
+    border: 1px solid #e5e5e5
+    padding: 0.5rem 1rem
+    text-align: left
+    
+  th
+    background: #f8f8f8
+    font-weight: 600
+    
+  tr:nth-child(even)
+    background: #fdfdfd
+
+// 中文脚注优化
+.footnotes
+  margin-top: 2rem
+  padding-top: 1rem
+  border-top: 1px solid #e5e5e5
+  font-size: 0.9em
+  
+  ol
+    padding-left: 1.5rem
+    
+  li
+    margin: 0.5rem 0
+
+// 中文代码块标题优化
+.highlight
+  position: relative
+  
+  &[data-lang]:before
+    content: attr(data-lang)
+    position: absolute
+    top: 0
+    right: 1rem
+    padding: 0.2rem 0.5rem
+    background: rgba(140, 140, 140, 0.1)
+    font-size: 0.8rem
+    color: #8c8c8c
+    border-radius: 0 0 4px 4px

@@ -1,0 +1,81 @@
+// 中文优化样式
+// Chinese typography optimization
+
+// 基础字体渲染优化
+body
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-rendering: optimizeLegibility
+
+// 中文段落优化
+p
+  text-align: justify
+  word-wrap: break-word
+  word-break: break-all
+  hyphens: none
+
+// 标题中文优化
+h1, h2, h3, h4, h5, h6
+  font-weight: 600
+  letter-spacing: 0.02em
+
+// 中文列表优化
+li
+  line-height: 1.8
+  word-break: break-word
+
+// 中文引用优化
+blockquote
+  font-style: normal
+  border-left: 4px solid #2bbc8a
+  padding-left: 1rem
+  margin-left: 0
+  color: #8c8c8c
+  background: rgba(43, 188, 138, 0.05)
+  border-radius: 0 4px 4px 0
+
+// 中文强调文本优化
+strong, b
+  font-weight: 600
+  color: #2a2a2a
+
+em, i
+  font-style: normal
+  background: linear-gradient(transparent 60%, rgba(43, 188, 138, 0.3) 60%)
+  padding: 0 2px
+
+// 中文代码优化
+code
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro", "Menlo", "Meslo LG", "Consolas", monospace
+  font-size: 0.9em
+
+pre code
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro", "Menlo", "Meslo LG", "Consolas", monospace
+
+// 移动端中文优化
+@media screen and (max-width: 768px)
+  body
+    font-size: 16px
+    line-height: 1.8
+  
+  h1, h2, h3, h4, h5, h6
+    line-height: 1.4
+
+// 中文元信息优化
+.meta
+  .reading-time, .word-count
+    display: inline-block
+    margin-right: 1rem
+    font-size: 0.85rem
+    color: #999999
+
+// 中文搜索优化
+input[type="search"], input[type="text"]
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", "Arial", sans-serif
+
+// 中文表格优化
+table
+  width: 100%
+  border-collapse: collapse
+  margin: 1rem 0
+  font-size: 0.9em

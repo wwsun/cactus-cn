@@ -1,10 +1,29 @@
 nav:
-  Home: /
-  About: /about/
-  Writing: /posts/
-  Projects: http://github.com/sergodeeva
+  首页: /
+  关于: /about/
+  文章: /posts/
+  项目: http://github.com/wwsun
 
-projects_url: http://github.com/sergodeeva
+projects_url: http://github.com/wwsun
+
+# 中文优化配置
+chinese:
+  enable: true
+  # 中文字体配置
+  fonts:
+    body: '"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", "Arial", sans-serif'
+    code: '"SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro", "Menlo", "Consolas", monospace'
+  # 中文排版配置
+  typography:
+    justify: true
+    line_height: 1.8
+    paragraph_spacing: 1.2em
+  # 中文日期格式
+  date_format: 'YYYY年MM月DD日'
+  # 中文分页文本
+  pagination:
+    prev: '上一页'
+    next: '下一页'
 
 customize:
     gravatar:
@@ -27,9 +46,9 @@ customize:
         url: /images/apple-touch-icon.png
         gravator: false
     social_links:
-        github: http://github.com/sergodeeva
-        facebook: /
-        linkedin: https://www.linkedin.com/in/natalyakosenko/
+        github: http://github.com/wwsun
+        # facebook: /
+        # linkedin: https://www.linkedin.com/in/natalyakosenko/
     show_all_posts: false
     post_count: 10
     highlight: pojoaque

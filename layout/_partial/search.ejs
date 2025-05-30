@@ -1,7 +1,15 @@
 <section id="search">
   <form>
-    <input type="text" class="search-input" id="search-input" placeholder="search...">
+    <% if (config.language === 'zh-CN' || config.language === 'zh') { %>
+      <input type="text" class="search-input" id="search-input" placeholder="搜索文章...">
+    <% } else { %>
+      <input type="text" class="search-input" id="search-input" placeholder="search...">
+    <% } %>
   </form>
   <div id="search-result"></div>
-  <p class="search-no-result">No results found</p>
+  <% if (config.language === 'zh-CN' || config.language === 'zh') { %>
+    <p class="search-no-result">没有找到相关结果</p>
+  <% } else { %>
+    <p class="search-no-result">No results found</p>
+  <% } %>
 </section>

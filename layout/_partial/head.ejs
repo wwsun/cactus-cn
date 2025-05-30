@@ -4,6 +4,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <% if (config.language === 'zh-CN' || config.language === 'zh') { %>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <% } %>
     <%- open_graph({
         image:          thumbnail(page),
         fb_app_id:      theme.miscellaneous.open_graph.fb_app_id,

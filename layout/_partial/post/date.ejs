@@ -1,5 +1,9 @@
 <% if (post.date) { %>
     <div class="<%= class_name %>">
-        <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, config.date_format) %></time>
+        <% if (theme.chinese && theme.chinese.enable && theme.chinese.date_format) { %>
+            <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= chinese_date(post.date, theme.chinese.date_format) %></time>
+        <% } else { %>
+            <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, config.date_format) %></time>
+        <% } %>
     </div>
 <% } %>
