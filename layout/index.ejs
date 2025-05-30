@@ -4,18 +4,31 @@
   <% } %>
   <p style="display: inline">
     <% if (theme.customize.social_links) { %>
-      Find me on
+      <% if (config.language === 'zh-CN' || config.language === 'zh') { %>
+        你可以在这里找到我：
+      <% } else { %>
+        Find me on
+      <% } %>
       <ul id="socialinfo">
         <% for(var i in theme.customize.social_links) { %>
           <li><a class="icon" target="_blank" href="<%- url_for(theme.customize.social_links[i]) %>"><i class="fa fa-<%= i %>"></i></a></li>
         <% } %>
-      </ul>.
+      </ul>
+      <% if (config.language === 'zh-CN' || config.language === 'zh') { %>
+        。
+      <% } else { %>
+        .
+      <% } %>
     <% } %>
   </p>
 </section>
 
 <section id="writing">
-  <span class="h1"><a href="<%- url_for("posts") %>">Writing</a></span>
+  <% if (config.language === 'zh-CN' || config.language === 'zh') { %>
+    <span class="h1"><a href="<%- url_for("posts") %>">最新文章</a></span>
+  <% } else { %>
+    <span class="h1"><a href="<%- url_for("posts") %>">Writing</a></span>
+  <% } %>
   <ul class="post-list">
     <% if (theme.customize.show_all_posts) { %>
       <% var show_posts = page.posts.sort('date', 'desc') %>
@@ -25,7 +38,14 @@
     <% show_posts.each(function(post, i){ %>
       <li class="post-item">
         <%- partial('_partial/post/date', { post: post, class_name: 'meta' }) %>
-        <span><%- partial('_partial/post/title', { post: post, index: true, class_name: '' }) %></span>
+        <div class="post-content">
+          <span><%- partial('_partial/post/title', { post: post, index: true, class_name: '' }) %></span>
+          <% if (post.excerpt) { %>
+            <div class="post-excerpt"><%- post.excerpt %></div>
+          <% } else if (post.content) { %>
+            <div class="post-excerpt"><%- truncate(strip_html(post.content), {length: 120}) %></div>
+          <% } %>
+        </div>
       </li>
     <% }); %>
   </ul>
@@ -36,11 +56,18 @@
 
 <% if (site.data.projects) { %>
 <section id="projects">
-  <span class="h1"><a href="<%- url_for(theme.projects_url) %>">Projects</a></span>
+  <% if (config.language === 'zh-CN' || config.language === 'zh') { %>
+    <span class="h1"><a href="<%- url_for(theme.projects_url) %>">代表性项目</a></span>
+  <% } else { %>
+    <span class="h1"><a href="<%- url_for(theme.projects_url) %>">Projects</a></span>
+  <% } %>
   <ul class="project-list">
     <% for(var obj in site.data.projects){ %>
       <li class="project-item">
-        <a href="<%= site.data.projects[obj].url %>"><%= site.data.projects[obj].name %></a>: <%= site.data.projects[obj].desc %>
+        <span class="project-title">
+          <a href="<%= site.data.projects[obj].url %>" target="_blank"><%= site.data.projects[obj].name %></a>
+        </span>
+        <span class="project-desc"><%= site.data.projects[obj].desc %></span>
       </li>
     <% } %>
   </ul>
